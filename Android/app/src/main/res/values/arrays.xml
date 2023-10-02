@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="user_types_array">
+        <item>Posetilac</item>
+        <item>Zaposleni</item>
+    </string-array>
+</resources>

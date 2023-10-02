@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12">
+    <h3>Zahtevi za ulaznice</h3>
+  </div>
+</div>
+
+<hr />
+
+<div class="content">
+  <div class="row" *ngIf="tickets != null && tickets.length == 0">
+    <div class="col-md-12">Nema zahteva za ulaznice.</div>
+  </div>
+
+  <div class="row" *ngIf="tickets != null && tickets.length > 0">
+    <div class="col-md-2 offset-md-2"><b>Korisnik</b></div>
+    <div class="col-md-2"><b>Paket</b></div>
+    <div class="col-md-1"><b>Kolicina</b></div>
+    <div class="col-md-1"><b>Cena</b></div>
+  </div>
+
+  <div class="row" *ngFor="let ticket of tickets; let i = index">
+    <div class="col-md-2 offset-md-2">
+      {{ users[i].firstname + " " + users[i].lastname }}
+    </div>
+    <div class="col-md-2">{{ promoPackages[i].name }}</div>
+    <div class="col-md-1">{{ ticket.quantity }}</div>
+    <div class="col-md-1">{{ ticket.price }}</div>
+    <div class="col-md-2">
+      <input
+        class="btn buttonGreen"
+        type="button"
+        value="Odobri"
+        (click)="acceptTicket(users[i].id, ticket.id)"
+      />
+      &nbsp;
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Odbij"
+        (click)="rejectTicket(users[i].id, ticket.id)"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+img {
+  max-width: 40px;
+  max-height: 60px;
+  border-radius: 50%;
+}
+
+#header {
+  min-height: 70px;
+  background-color: rgba(74, 191, 107, 1);
+}
+
+.headerText {
+  color: white;
+}
+
+.headerButton {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.headerItem {
+  padding-top: 20px;
+  text-align: center;
+}
+
+div.headerItem:hover {
+  background-color: rgba(28, 190, 90, 1);
+  cursor: pointer;
+}
+
+#headerPicture {
+  padding-top: 15px;
+}
+
+.headerAppNameText {
+  font-family: Brush Script MT;
+  font-size: xx-large;
+}
+
+#headerMenu {
+  min-height: 30px;
+  background-color: rgba(170, 91, 66, 1);
+}
+
+.headerMenuItemList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.headerMenuItem {
+  padding-top: 10px;
+  text-align: center;
+}
+
+div.headerMenuItem:hover {
+  background-color: rgb(157, 77, 53);
+  cursor: pointer;
+}
+
+/* Dropdown notifications */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content p {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content p:hover {
+  background-color: #ddd;
+  /* background-color: rgb(157, 77, 53); */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

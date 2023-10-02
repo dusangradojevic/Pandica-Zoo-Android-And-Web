@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "code": "PROMO1",
+    "discount": 10,
+    "quantity": 6
+  },
+
+  {
+    "id": 1,
+    "code": "PROMO2",
+    "discount": 15,
+    "quantity": 5
+  },
+
+  {
+    "id": 2,
+    "code": "PROMO3",
+    "discount": 20,
+    "quantity": 100
+  }
+]

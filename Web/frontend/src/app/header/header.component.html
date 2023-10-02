@@ -1,0 +1,127 @@
+<div class="row" id="header">
+  <div class="col-2 col-md-1" id="headerPicture" (click)="goToHomePage()">
+    <img src="/assets/panda.png" class="cursor" />
+  </div>
+
+  <div class="col-8 col-md-2 offset-md-4 headerItem" (click)="goToHomePage()">
+    <p class="headerText headerAppNameText">Pandica</p>
+  </div>
+
+  <div
+    class="col-4 col-md-2 offset-md-3 headerButton"
+    *ngIf="currentPage == 'register' && user == null"
+  >
+    <input
+      type="button"
+      class="btn buttonBrown"
+      value="Prijava"
+      (click)="goToLogin()"
+    />
+  </div>
+
+  <div
+    class="col-4 col-md-2 offset-md-3 headerButton"
+    *ngIf="currentPage == 'login' && user == null"
+  >
+    <input
+      type="button"
+      class="btn buttonBrown"
+      value="Registracija"
+      (click)="goToRegistration()"
+    />
+  </div>
+
+  <div class="col-4 col-md-1 offset-md-3 headerButton" *ngIf="user != null">
+    <input
+      type="button"
+      class="btn buttonBrown"
+      value="Moj profil"
+      (click)="goToUserProfile()"
+    />
+  </div>
+
+  <div class="col-4 col-md-1 headerButton" *ngIf="user != null">
+    <input
+      type="button"
+      class="btn buttonBrown"
+      value="Odjava"
+      (click)="logout()"
+    />
+  </div>
+</div>
+
+<div class="row" id="headerMenu">
+  <!-- Visitor header menu -->
+  <div
+    class="col-12 col-md-12 headerMenuItemList"
+    *ngIf="user != null && user.type == 'visitor'"
+  >
+    <div class="headerMenuItem" (click)="goToVisitorTickets()">
+      <p class="headerText">Kupovina ulaznica</p>
+    </div>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <div class="headerMenuItem" (click)="goToVisitorEvents()">
+      <p class="headerText">Desavanja</p>
+    </div>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <div class="headerMenuItem" (click)="goToVisitorAnimals()">
+      <p class="headerText">Zivotinje</p>
+    </div>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <div class="headerMenuItem" (click)="goToVisitorContact()">
+      <p class="headerText">Kontakt</p>
+    </div>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <div class="headerMenuItem dropdown">
+      <p class="headerText">Obavestenja</p>
+      <div class="dropdown-content">
+        <p *ngIf="user.notifications.length == 0">Nemate novih obavestenja</p>
+        <p *ngFor="let notification of user.notifications">
+          {{ notification }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Employee header menu -->
+  <div
+    class="col-12 col-md-12 headerMenuItemList"
+    *ngIf="user != null && user.type == 'employee'"
+  >
+    <div class="headerMenuItem" (click)="goToEmployeeTickets()">
+      <p class="headerText">Ulaznice</p>
+    </div>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <div class="headerMenuItem" (click)="goToEmployeeAnimals()">
+      <p class="headerText">Zivotinje</p>
+    </div>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <div class="headerMenuItem" (click)="goToEmployeePromo()">
+      <p class="headerText">Promo paketi</p>
+    </div>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <div class="headerMenuItem" (click)="goToEmployeeEvents()">
+      <p class="headerText">Desavanja</p>
+    </div>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <div class="headerMenuItem" (click)="goToEmployeePromoCodes()">
+      <p class="headerText">Promo kodovi</p>
+    </div>
+  </div>
+</div>

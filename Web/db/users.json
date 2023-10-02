@@ -1,0 +1,40 @@
+[
+  {
+    "id": 0,
+    "username": "admin",
+    "password": "admin",
+    "firstname": "Admin",
+    "lastname": "Adminic",
+    "phone": "065123482",
+    "email": "admin@mail.com",
+    "notifications": [],
+    "type": "admin",
+    "status": "accepted"
+  },
+
+  {
+    "id": 1,
+    "username": "visitor",
+    "password": "visitor",
+    "firstname": "Posetilac",
+    "lastname": "Poseticic",
+    "phone": "42134312",
+    "email": "visitor@mail.com",
+    "notifications": ["Dobrodosli na sajt zooloskog vrta \"Pandica\"!"],
+    "type": "visitor",
+    "status": "accepted"
+  },
+
+  {
+    "id": 2,
+    "username": "employee",
+    "password": "employee",
+    "firstname": "Zaposleni",
+    "lastname": "Zaposlenic",
+    "phone": "555-333",
+    "email": "employee@mail.com",
+    "notifications": [],
+    "type": "employee",
+    "status": "accepted"
+  }
+]

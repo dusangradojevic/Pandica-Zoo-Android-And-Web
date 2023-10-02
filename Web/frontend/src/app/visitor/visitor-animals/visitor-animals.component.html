@@ -1,0 +1,93 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12">
+    <h3>Zivotinje</h3>
+  </div>
+</div>
+
+<hr />
+
+<div class="content">
+  <div class="row rowMargin">
+    <div class="col-12 col-md-1 offset-md-5">
+      <img
+        [src]="pictures.get(animals[animalIterator].id)"
+        (click)="goToAnimalDetails(animals[animalIterator])"
+      />
+    </div>
+    <div class="col-md-4">
+      <b>{{ animals[animalIterator].name }}</b>
+    </div>
+  </div>
+
+  <div class="row rowMargin" *ngIf="animalIterator + 1 < animalCount">
+    <div class="col-12 col-md-1 offset-md-5">
+      <img
+        [src]="pictures.get(animals[animalIterator + 1].id)"
+        (click)="goToAnimalDetails(animals[animalIterator + 1])"
+      />
+    </div>
+    <div class="col-md-4">
+      <b>{{ animals[animalIterator + 1].name }}</b>
+    </div>
+  </div>
+
+  <div class="row rowMargin" *ngIf="animalIterator + 2 < animalCount">
+    <div class="col-12 col-md-1 offset-md-5">
+      <img
+        [src]="pictures.get(animals[animalIterator + 2].id)"
+        (click)="goToAnimalDetails(animals[animalIterator + 2])"
+      />
+    </div>
+    <div class="col-md-4">
+      <b>{{ animals[animalIterator + 2].name }}</b>
+    </div>
+  </div>
+
+  <div class="row rowMargin" *ngIf="animalIterator + 3 < animalCount">
+    <div class="col-12 col-md-1 offset-md-5">
+      <img
+        [src]="pictures.get(animals[animalIterator + 3].id)"
+        (click)="goToAnimalDetails(animals[animalIterator + 3])"
+      />
+    </div>
+    <div class="col-md-4">
+      <b>{{ animals[animalIterator + 3].name }}</b>
+    </div>
+  </div>
+
+  <div class="row rowMargin" *ngIf="animalIterator + 4 < animalCount">
+    <div class="col-12 col-md-1 offset-md-5">
+      <img
+        [src]="pictures.get(animals[animalIterator + 4].id)"
+        (click)="goToAnimalDetails(animals[animalIterator + 4])"
+      />
+    </div>
+    <div class="col-md-4">
+      <b>{{ animals[animalIterator + 4].name }}</b>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-md-12">
+      <input
+        class="btn buttonYellow"
+        type="button"
+        value="<"
+        (click)="prevSlide()"
+      />
+      &nbsp;&nbsp;&nbsp;
+      <input
+        class="btn buttonYellow"
+        type="button"
+        value=">"
+        (click)="nextSlide()"
+      />
+    </div>
+  </div>
+</div>

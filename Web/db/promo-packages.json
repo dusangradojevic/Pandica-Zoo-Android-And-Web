@@ -1,0 +1,43 @@
+[
+  {
+    "id": 0,
+    "name": "Odrasli (vise od 15 godina)",
+    "price": 700,
+    "type": "single"
+  },
+
+  {
+    "id": 1,
+    "name": "Deca (od 5 do 15 godina)",
+    "price": 400,
+    "type": "single"
+  },
+
+  {
+    "id": 2,
+    "name": "Deca do 5 godina ne placaju ulaznicu",
+    "price": 0,
+    "type": "single"
+  },
+
+  {
+    "id": 3,
+    "name": "Grupe odraslih (vise od 15 osoba)",
+    "price": 500,
+    "type": "group"
+  },
+
+  {
+    "id": 4,
+    "name": "Grupe iz osnovnih i srednjih skola (vise od 15 dece)",
+    "price": 300,
+    "type": "group"
+  },
+
+  {
+    "id": 5,
+    "name": "Grupe iz predskolskih ustanova",
+    "price": 200,
+    "type": "group"
+  }
+]

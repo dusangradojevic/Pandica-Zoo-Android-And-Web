@@ -1,0 +1,71 @@
+[
+  {
+    "id": 0,
+    "name": "Slon",
+    "description": "Slon je impresivan, veliki kopneni sisar s karakterističnim dugačkim kljovama i velikim ušima, koji nas podseća na snagu i gracioznost divljine.",
+    "photo": "src/upload/animal_0.jpeg"
+  },
+
+  {
+    "id": 1,
+    "name": "Tigar",
+    "description": "Tigar je moćna divlja mačka s prepoznatljivim prugastim krznom, koji simbolizuje snagu i eleganciju u svetu životinja.",
+    "photo": "src/upload/animal_1.png"
+  },
+
+  {
+    "id": 2,
+    "name": "Lav",
+    "description": "Lav je kralj afričke savane, predstavnik maestralne moći i hrabrosti u životinjskom carstvu, s impozantnom grivom i plemenitim držanjem.",
+    "photo": "src/upload/animal_2.jpeg"
+  },
+
+  {
+    "id": 3,
+    "name": "Vuk",
+    "description": "Vuk je lukav i društven sisar sa snažnim instinktom za preživljavanje i karakterističnim krznom sivih nijansi, koji nas podseća na divlju i slobodnu prirodu.",
+    "photo": "src/upload/animal_3.jpeg"
+  },
+
+  {
+    "id": 4,
+    "name": "Beli medved",
+    "description": "Beli medved je fascinantan sisar koji se prilagodio hladnim arktičkim uslovima, sa svojom debelom belom dlakom i impozantnim izgledom koji ga čini simbolom snega i leda.",
+    "photo": "src/upload/animal_4.jpeg"
+  },
+
+  {
+    "id": 5,
+    "name": "Orao",
+    "description": "Orao je veličanstvena ptica grabljivica, sa širokim rasponom krila i oštrim kandžama, koja simbolizuje slobodu i moć u svetu ptica.",
+    "photo": "src/upload/animal_5.jpeg"
+  },
+
+  {
+    "id": 6,
+    "name": "Nosorog",
+    "description": "Nosorog je ogroman kopneni sisar sa debelom kožom, velikim rogom na nosu i impozantnim izgledom koji ga čini jednim od najupečatljivijih članova divlje faune.",
+    "photo": "src/upload/animal_6.png"
+  },
+
+  {
+    "id": 7,
+    "name": "Leopard",
+    "description": "Leopard je elegantna divlja mačka s prepoznatljivim šarama na krznu, koja odiše tajanstvenošću i snagom u svetu divljine.",
+    "photo": "src/upload/animal_7.jpeg"
+  },
+
+  {
+    "id": 8,
+    "name": "Grizli",
+    "description": "Grizli je veliki i moćan medved sa smeđim krznom i karakterističnom grivom oko vrata, koji predstavlja simbol divljine i snage u Severnoj Americi.",
+    "photo": "src/upload/animal_8.jpeg"
+  },
+
+  {
+    "id": 9,
+    "name": "Foka",
+    "description": "Foka je morski sisar sa dugim telom, pljosnatim repom i velikim očima, koja se odlično prilagodila životu u hladnim morskim vodama i simbolizuje gracioznost u podvodnom svetu.",
+    "photo": "src/upload/animal_9.jpeg"
+  }
+]

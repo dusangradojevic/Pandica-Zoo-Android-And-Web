@@ -1,0 +1,163 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12">
+    <h3>Dodaj novi paket</h3>
+  </div>
+</div>
+
+<hr />
+
+<div class="content">
+  <form>
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Naziv:</b></div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input type="text" name="name" [(ngModel)]="name" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Cena:</b></div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input type="number" name="price" [(ngModel)]="price" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight">
+        <b>Tip:</b>
+      </div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input
+          type="radio"
+          id="single"
+          name="type"
+          value="single"
+          [(ngModel)]="type"
+        />
+        <label for="single">Pojedinacan</label>
+        &nbsp;
+        <input
+          type="radio"
+          id="group"
+          name="type"
+          value="group"
+          [(ngModel)]="type"
+        />
+        <label for="group">Grupni</label>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="col-12 col-md-1 offset-md-6 alignLeft">
+        <input
+          type="button"
+          class="btn buttonGreen"
+          value="Dodaj"
+          (click)="addPromoPackage()"
+        />
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col-12 col-md-4 offset-md-5 alignLeft">
+      <span class="error">{{ msgError }}</span>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-12">
+      <h3>Paketi</h3>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row" *ngIf="promoPackages != null && promoPackages.length == 0">
+    <div class="col-md-12">Nema promo paketa.</div>
+  </div>
+
+  <div class="row" *ngIf="promoPackages != null && promoPackages.length > 0">
+    <div class="col-12 col-md-2 offset-md-3"><b>Naziv</b></div>
+    <div class="col-12 col-md-2"><b>Cena</b></div>
+    <div class="col-12 col-md-2"><b>Tip</b></div>
+  </div>
+
+  <br />
+
+  <div class="row" *ngFor="let package of promoPackages; let i = index">
+    <div class="col-12 col-md-2 offset-md-3">
+      <p *ngIf="changingInfo != i">{{ package.name }}</p>
+      <input type="text" [(ngModel)]="changeName" *ngIf="changingInfo == i" />
+    </div>
+    <div class="col-12 col-md-2">
+      <p *ngIf="changingInfo != i && package.price != 0">{{ package.price }}</p>
+      <p *ngIf="changingInfo != i && package.price == 0">Besplatan</p>
+      <input type="text" [(ngModel)]="changePrice" *ngIf="changingInfo == i" />
+    </div>
+    <div class="col-12 col-md-2">
+      <p *ngIf="changingInfo != i && package.type == 'single'">Pojedinacan</p>
+      <p *ngIf="changingInfo != i && package.type == 'group'">Grupni</p>
+      <input
+        type="radio"
+        id="single"
+        name="type"
+        value="single"
+        [(ngModel)]="changeType"
+        *ngIf="changingInfo == i"
+      />
+      <label *ngIf="changingInfo == i">Pojedinacan</label>
+      &nbsp;
+      <input
+        type="radio"
+        id="group"
+        name="type"
+        value="group"
+        [(ngModel)]="changeType"
+        *ngIf="changingInfo == i"
+      />
+      <label *ngIf="changingInfo == i">Grupni</label>
+    </div>
+    <div class="col-12 col-md-2">
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Izmeni"
+        (click)="beginChangingInfo(i)"
+        *ngIf="changingInfo != i"
+      />
+      &nbsp;
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Obrisi"
+        (click)="deletePromoPackage(package.id)"
+        *ngIf="changingInfo != i"
+      />
+      &nbsp;
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Potvrdi"
+        (click)="submitChangingInfo(package.id)"
+        *ngIf="changingInfo == i"
+      />
+      &nbsp;
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Odustani"
+        (click)="cancelChangingInfo()"
+        *ngIf="changingInfo == i"
+      />
+    </div>
+  </div>
+</div>

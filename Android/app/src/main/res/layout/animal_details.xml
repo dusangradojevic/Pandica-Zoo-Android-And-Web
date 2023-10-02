@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/animal_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scroll_animal_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_animal_details_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="16dp"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <!-- Black Line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_animal_details_photo"
+                    android:layout_width="144dp"
+                    android:layout_height="101dp" />
+
+                <TextView
+                    android:id="@+id/text_animal_details_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="left" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Ostavite komentar:"
+                android:textSize="30dp" />
+
+            <EditText
+                android:id="@+id/edit_text_animal_details_add_comment"
+                android:layout_width="347dp"
+                android:layout_height="72dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/button_animal_details_add_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:text="Postavi komentar"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Komentari:"
+                android:textSize="40dp" />
+
+            <LinearLayout
+                android:id="@+id/animal_details_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_animal_details_no_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nema komentara."
+                    android:textSize="23dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

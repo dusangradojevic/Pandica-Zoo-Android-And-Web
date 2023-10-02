@@ -1,0 +1,11 @@
+.row {
+  margin-bottom: 10px;
+}
+
+.col-md-1 {
+  text-align: center;
+}
+
+.col-md-12 {
+  text-align: center;
+}

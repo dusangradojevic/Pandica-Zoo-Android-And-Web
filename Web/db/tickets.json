@@ -1,0 +1,31 @@
+[
+  {
+    "id": 0,
+    "userId": 1,
+    "promoPackageId": 1,
+    "quantity": 1,
+    "price": 700,
+    "promoCodeId": -1,
+    "status": "pending"
+  },
+
+  {
+    "id": 1,
+    "userId": 1,
+    "promoPackageId": 0,
+    "quantity": 1,
+    "price": 1000,
+    "promoCodeId": -1,
+    "status": "pending"
+  },
+
+  {
+    "id": 2,
+    "userId": 1,
+    "promoPackageId": 3,
+    "quantity": 1,
+    "price": 1300,
+    "promoCodeId": -1,
+    "status": "pending"
+  }
+]

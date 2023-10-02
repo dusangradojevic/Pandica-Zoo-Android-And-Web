@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12">
+    <h3>Promo kodovi</h3>
+  </div>
+</div>
+
+<hr />
+
+<div class="content">
+  <div class="row">
+    <div class="col-12 col-md-2 offset-md-4 alignRight"><b> Kod:</b></div>
+    <div class="col-12 col-md-4 alignLeft">
+      <input type="text" name="code" [(ngModel)]="code" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-2 offset-md-4 alignRight">
+      <b>Popust (u procentima):</b>
+    </div>
+    <div class="col-12 col-md-4 alignLeft">
+      <input type="number" name="discount" [(ngModel)]="discount" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Kolicina:</b></div>
+    <div class="col-12 col-md-4 alignLeft">
+      <input type="number" name="quantity" [(ngModel)]="quantity" />
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-12 col-md-1 offset-md-6 alignLeft">
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Dodaj"
+        (click)="addPromoCode()"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12"><h3>Registracija</h3></div>
+</div>
+
+<hr />
+
+<div class="content">
+  <form>
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Ime*:</b></div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input type="text" name="firstname" [(ngModel)]="user.firstname" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Prezime*:</b></div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input type="text" name="lastname" [(ngModel)]="user.lastname" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Email*:</b></div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input type="email" name="email" [(ngModel)]="user.email" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight">
+        <b>Korisnicko ime*:</b>
+      </div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input type="text" name="username" [(ngModel)]="user.username" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Telefon*:</b></div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input type="text" name="phone" [(ngModel)]="user.phone" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Lozinka*:</b></div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input type="password" name="password" [(ngModel)]="user.password" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight">
+        <b>Potvrdite lozinku*:</b>
+      </div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input
+          type="password"
+          name="confirmPassword"
+          [(ngModel)]="confirmPassword"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Tip*:</b></div>
+      <div class="col-12 col-md-4 alignLeft">
+        <select [(ngModel)]="user.type">
+          <option value="visitor" selected="true">Posetilac</option>
+          <option value="employee">Zaposleni</option>
+        </select>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="col-12 col-md-1 offset-md-5 alignRight">
+        <input
+          type="button"
+          class="btn buttonGreen"
+          value="Registruj se"
+          (click)="register()"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-4 offset-md-5 alignLeft">
+        <span class="error">{{ msgError }}</span>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,57 @@
+.container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(243, 240, 151, 1);
+}
+
+.content {
+  min-height: 660px;
+}
+
+.error {
+  color: red;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+.buttonBrown {
+  background-color: rgba(170, 91, 66, 1);
+  color: white;
+  border: 1px black solid;
+  transition: all 100s ease-in-out;
+}
+
+.buttonGreen {
+  background-color: rgba(74, 191, 107, 1);
+  border: 1px black solid;
+  transition: all 100s ease-in-out;
+}
+
+.buttonYellow {
+  background-color: rgba(243, 240, 151, 1);
+  border: 1px black solid;
+  transition: all 100s ease-in-out;
+}

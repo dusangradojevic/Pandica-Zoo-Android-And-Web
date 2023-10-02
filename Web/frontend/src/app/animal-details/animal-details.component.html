@@ -1,0 +1,121 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12">
+    <h3>{{ animal.name }}</h3>
+  </div>
+</div>
+
+<hr />
+
+<div class="content">
+  <div class="row">
+    <div class="col-md-3 offset-md-3 alignRight">
+      <img [src]="picture" class="profilePicture" />
+    </div>
+    <div class="col-md-3 alignLeft">{{ animal.description }}</div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-md-3 offset-md-4">
+      <h4>Ostavite komentar:</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-4">
+      <input type="text" size="100" [(ngModel)]="newComment" />
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-md-8 offset-md-4">
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Postavi komentar"
+        (click)="addComment()"
+      />
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-md-3 offset-md-4">
+      <h4>Komentari:</h4>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="comments.length == 0">
+    <div class="col-md-8 offset-md-4">Nema komentara</div>
+  </div>
+
+  <br />
+
+  <div *ngFor="let comment of comments; let i = index">
+    <div class="row">
+      <div class="col-md-2 offset-md-4">
+        <h5>
+          {{ userCommenters[i].firstname + " " + userCommenters[i].lastname }}
+        </h5>
+      </div>
+      <div
+        class="col-md-2"
+        *ngIf="user.id == comment.userId && comment.id != commentEditedNow"
+      >
+        <input
+          type="button"
+          class="btn buttonGreen"
+          value="Izmeni"
+          (click)="startUpdateComment(comment.id, comment.text)"
+        />
+        &nbsp;
+        <input
+          type="button"
+          class="btn buttonGreen"
+          value="Obrisi"
+          (click)="removeComment(comment.id)"
+        />
+      </div>
+      <div
+        class="col-md-2"
+        *ngIf="user.id == comment.userId && comment.id == commentEditedNow"
+      >
+        <input
+          type="button"
+          class="btn buttonGreen"
+          value="Potvrdi"
+          (click)="confirmUpdateComment(comment.id)"
+        />
+        &nbsp;
+        <input
+          type="button"
+          class="btn buttonGreen"
+          value="Odustani"
+          (click)="cancelUpdateComment(comment.id)"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 offset-md-4" *ngIf="comment.id != commentEditedNow">
+        {{ comment.text }}
+      </div>
+      <div class="col-md-8 offset-md-4" *ngIf="comment.id == commentEditedNow">
+        <input
+          type="text"
+          size="100"
+          style="margin-top: 5px"
+          [(ngModel)]="commentInput"
+        />
+      </div>
+    </div>
+    <br />
+  </div>
+</div>

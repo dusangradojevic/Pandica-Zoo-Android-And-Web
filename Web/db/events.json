@@ -1,0 +1,25 @@
+[
+  {
+    "id": 0,
+    "name": "Igranje sa bebom slona",
+    "description": "Igranje i mazenje bebe slona!",
+    "photo": "src/upload/event_0.jpeg",
+    "likes": 0
+  },
+
+  {
+    "id": 1,
+    "name": "Zoo Challenge",
+    "description": "Pokazite timski duh, poznavanje zivotinja i snalazenje u prostoru! Vas tim dobija pocetni trag koji vas vodi kroz razlicite avanture do konacnog rešenja misterija Pandica Zoo Vrta!",
+    "photo": "src/upload/event_1.jpeg",
+    "likes": 0
+  },
+
+  {
+    "id": 2,
+    "name": "Scavanger hunt",
+    "description": "Dva tima dobijaju spisak zivotinja koje treba da pronadju i fotografisu telefonom. Sa nekim zivotinjama moraju da naprave cak i selfi fotografiju",
+    "photo": "src/upload/event_2.jpeg",
+    "likes": 0
+  }
+]

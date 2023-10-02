@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12">
+    <h3>Zahtevi za registraciju</h3>
+  </div>
+</div>
+
+<hr />
+
+<div class="content">
+  <div class="row" *ngIf="users != null && users.length == 0">
+    <div class="col-md-12">Nema zahteva za registraciju.</div>
+  </div>
+
+  <div class="row" *ngIf="users != null && users.length > 0">
+    <div class="col-md-1 offset-md-3"><b>Ime</b></div>
+    <div class="col-md-1"><b>Prezime</b></div>
+    <div class="col-md-1"><b>Email</b></div>
+    <div class="col-md-1"><b>Korisnicko ime</b></div>
+    <div class="col-md-1"><b>Telefon</b></div>
+    <div class="col-md-1"><b>Tip</b></div>
+  </div>
+
+  <div class="row" *ngFor="let user of users">
+    <div class="col-md-1 offset-md-3">{{ user.firstname }}</div>
+    <div class="col-md-1">{{ user.lastname }}</div>
+    <div class="col-md-1">{{ user.email }}</div>
+    <div class="col-md-1">{{ user.username }}</div>
+    <div class="col-md-1">{{ user.phone }}</div>
+    <div class="col-md-1" *ngIf="user.type == 'visitor'">Posetilac</div>
+    <div class="col-md-1" *ngIf="user.type == 'employee'">Zaposleni</div>
+    <div class="col-md-2">
+      <input
+        class="btn buttonGreen"
+        type="button"
+        value="Prihvati"
+        (click)="acceptUser(user.id)"
+      />
+      &nbsp;
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Odbij"
+        (click)="rejectUser(user.id)"
+      />
+    </div>
+  </div>
+</div>

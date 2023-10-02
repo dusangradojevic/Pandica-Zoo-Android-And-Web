@@ -1,0 +1,135 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12">
+    <h3>Moj profil</h3>
+  </div>
+</div>
+
+<hr />
+
+<div class="content">
+  <div class="row">
+    <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Ime:</b></div>
+    <div class="col-12 col-md-4 alignLeft">
+      <div [hidden]="changingInfo">{{ user.firstname }}</div>
+      <div [hidden]="!changingInfo">
+        <input type="text" [(ngModel)]="firstname" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Prezime:</b></div>
+    <div class="col-12 col-md-4 alignLeft">
+      <div [hidden]="changingInfo">{{ user.lastname }}</div>
+      <div [hidden]="!changingInfo">
+        <input type="text" [(ngModel)]="lastname" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Email:</b></div>
+    <div class="col-12 col-md-4 alignLeft">
+      <div [hidden]="changingInfo">{{ user.email }}</div>
+      <div [hidden]="!changingInfo">
+        <input type="text" [(ngModel)]="email" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-2 offset-md-4 alignRight">
+      <b>Korisnicko ime:</b>
+    </div>
+    <div class="col-12 col-md-4 alignLeft">
+      <div [hidden]="changingInfo">{{ user.username }}</div>
+      <div [hidden]="!changingInfo">
+        <input type="text" [(ngModel)]="username" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Telefon:</b></div>
+    <div class="col-12 col-md-4 alignLeft">
+      <div [hidden]="changingInfo">{{ user.phone }}</div>
+      <div [hidden]="!changingInfo">
+        <input type="text" [(ngModel)]="phone" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row" [hidden]="!changingInfo">
+    <div class="col-12 col-md-2 offset-md-4 alignRight">
+      <b>Stara lozinka:</b>
+    </div>
+    <div class="col-12 col-md-4 alignLeft">
+      <input type="password" [(ngModel)]="confirmOldPassword" />
+    </div>
+  </div>
+
+  <div class="row" [hidden]="!changingInfo">
+    <div class="col-12 col-md-2 offset-md-4 alignRight">
+      <b>Nova lozinka:</b>
+    </div>
+    <div class="col-12 col-md-4 alignLeft">
+      <input type="password" [(ngModel)]="newPassword" />
+    </div>
+  </div>
+
+  <div class="row" [hidden]="!changingInfo">
+    <div class="col-12 col-md-2 offset-md-4 alignRight">
+      <b>Potvrdi lozinku:</b>
+    </div>
+    <div class="col-12 col-md-4 alignLeft">
+      <input type="password" [(ngModel)]="confirmNewPassword" />
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row" *ngIf="!changingInfo">
+    <div class="col-12 col-md-1 offset-md-5 alignRight">
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Izmeni podatke"
+        (click)="beginChangingInfo()"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-1 offset-md-5">
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Zavrsi izmenu"
+        (click)="submitChangingInfo()"
+        [hidden]="!changingInfo"
+      />
+    </div>
+
+    &nbsp; &nbsp; &nbsp;
+
+    <div class="col-12 col-md-1">
+      <input
+        type="button"
+        class="btn buttonGreen"
+        value="Odustani"
+        (click)="cancelChangingInfo()"
+        [hidden]="!changingInfo"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-4 offset-md-5 alignLeft">
+      <span class="error">{{ msgError }}</span>
+    </div>
+  </div>
+</div>

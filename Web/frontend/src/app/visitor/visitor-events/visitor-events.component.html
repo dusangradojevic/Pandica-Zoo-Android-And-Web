@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12">
+    <h3>Desavanja</h3>
+  </div>
+</div>
+
+<hr />
+
+<div class="content">
+  <div class="row rowMargin" *ngFor="let event of events; let i = index">
+    <div class="col-12 col-md-1 offset-md-4">
+      <img [src]="pictures.get(event.id)" />
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12">
+          <b>{{ event.name }}</b>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">{{ event.description }}</div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <input
+        class="btn buttonGreen"
+        type="button"
+        value="Svidja mi se"
+        (click)="like(event.id)"
+        *ngIf="likedEventsFlags[i] == true"
+      />
+      <input
+        class="btn buttonGreen"
+        type="button"
+        value="Ne svidja mi se"
+        (click)="dislike(event.id)"
+        *ngIf="likedEventsFlags[i] == false"
+      />
+      {{ event.likes }} svidjanja
+    </div>
+  </div>
+</div>

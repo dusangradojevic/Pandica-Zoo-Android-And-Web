@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12">
+    <h3>Prijava</h3>
+  </div>
+</div>
+
+<hr />
+
+<div class="content">
+  <form>
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight">
+        <b> Korisnicko ime: </b>
+      </div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input type="text" name="username" [(ngModel)]="username" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-2 offset-md-4 alignRight"><b>Lozinka:</b></div>
+      <div class="col-12 col-md-4 alignLeft">
+        <input type="password" name="password" [(ngModel)]="password" />
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="col-12 col-md-1 offset-md-5 alignRight">
+        <input
+          type="button"
+          class="btn buttonGreen"
+          value="Prijavi se"
+          (click)="login()"
+        />
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col-12 col-md-4 offset-md-5 alignLeft">
+      <span class="error">{{ msgError }}</span>
+    </div>
+  </div>
+</div>

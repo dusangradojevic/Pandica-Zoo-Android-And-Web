@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+<br />
+
+<div class="row">
+  <div class="col-12">
+    <h3>Cenovnik ulaznica</h3>
+  </div>
+</div>
+
+<hr />
+
+<div class="content">
+  <div class="col-12">
+    <h4>Po osobi:</h4>
+  </div>
+
+  <div class="row" *ngFor="let package of promoPackages; let i = index">
+    <div
+      class="col-md-12"
+      *ngIf="promoPackageNumbers[i] != -1 && package.type == 'single'"
+    >
+      <b>
+        {{ promoPackageNumbers[i] }}. {{ promoPackages[i].name }} -
+        {{ promoPackages[i].price }} RSD
+      </b>
+    </div>
+    <div
+      class="col-md-12"
+      *ngIf="promoPackageNumbers[i] == -1 && package.type == 'single'"
+    >
+      <b>
+        {{ promoPackages[i].name }}
+      </b>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="col-12">
+    <h4>Grupne ulaznice:</h4>
+  </div>
+
+  <div class="row" *ngFor="let package of promoPackages; let i = index">
+    <div
+      class="col-md-12"
+      *ngIf="promoPackageNumbers[i] != -1 && package.type == 'group'"
+    >
+      <b>
+        {{ promoPackageNumbers[i] }}. {{ promoPackages[i].name }} -
+        {{ promoPackages[i].price }} RSD
+      </b>
+    </div>
+    <div
+      class="col-md-12"
+      *ngIf="promoPackageNumbers[i] == -1 && package.type == 'group'"
+    >
+      <b>
+        {{ promoPackages[i].name }}
+      </b>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-md-3 offset-md-3 alignRight">
+      <b>Redni broj paketa za kupovinu:</b>
+    </div>
+    <div class="col-md-3 alignLeft">
+      <input type="number" [(ngModel)]="promoPackageNumber" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 offset-md-3 alignRight"><b>Količina:</b></div>
+    <div class="col-md-3 alignLeft">
+      <input type="number" [(ngModel)]="quantity" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 offset-md-3 alignRight"><b>Promo kod:</b></div>
+    <div class="col-md-3 alignLeft">
+      <input type="text" [(ngModel)]="promoCode" />
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-md-2 offset-md-6">
+      <input
+        class="btn buttonGreen"
+        type="button"
+        value="Kupi"
+        (click)="buyTicket()"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-ms-12">{{ msgError }}</div>
+  </div>
+</div>
